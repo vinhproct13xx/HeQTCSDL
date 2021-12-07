@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1028.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ThongKeController">
+   <children>
+      <BarChart fx:id="bcChiPhi" layoutX="34.0" layoutY="86.0" prefHeight="310.0" prefWidth="437.0" title="Tổng chi phí theo từng năm">
+        <xAxis>
+          <CategoryAxis label="Năm" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" label="Chi phí (đồng)" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="99.0" prefWidth="1028.0" text="Thống kê việc dã ngoại" textFill="#6315c9">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="bcChiPhiTB" layoutX="550.0" layoutY="86.0" prefHeight="310.0" prefWidth="446.0" title="Chi phí trung bình theo năm">
+        <xAxis>
+          <CategoryAxis fx:id="yChiPhiTB" label="Năm" prefWidth="380.0" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Chi phí (đồng)" side="LEFT" fx:id="xChiPhiTB" />
+        </yAxis>
+      </BarChart>
+      <BarChart fx:id="bcHSTB" layoutX="60.0" layoutY="396.0" prefHeight="310.0" prefWidth="411.0" title="Số học sinh tham gia trung bình theo năm">
+         <xAxis>
+            <CategoryAxis label="Năm" side="BOTTOM" fx:id="xHS" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="yHS" label="Số học sinh" side="LEFT" />
+         </yAxis>
+      </BarChart>
+      <BarChart fx:id="bcSoCD" layoutX="585.0" layoutY="396.0" prefHeight="310.0" prefWidth="411.0" title="Tổng số chuyến đi theo từng năm">
+         <xAxis>
+            <CategoryAxis label="Năm" side="BOTTOM" fx:id="xCD" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="yCD" label="Số chuyến đi" side="LEFT" />
+         </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

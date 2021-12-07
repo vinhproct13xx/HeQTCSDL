@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneChuyenDi" prefHeight="589.0" prefWidth="851.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChuyenDiController">
+   <children>
+      <AnchorPane layoutY="73.0" prefHeight="535.0" prefWidth="381.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="54.0">
+         <children>
+            <Label layoutX="17.0" layoutY="185.0" text="Công ty du lịch:" AnchorPane.leftAnchor="17.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="123.0" text="Mã chuyến đi:" AnchorPane.leftAnchor="20.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="298.0" text="Ngày khởi hành:" AnchorPane.leftAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfMaChuyenDi" editable="false" layoutX="126.0" layoutY="119.0" prefHeight="25.0" prefWidth="222.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="33.0" />
+            <JFXDatePicker fx:id="dpNgayKhoiHanh" layoutX="127.0" layoutY="294.0" prefHeight="25.0" prefWidth="230.0" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="24.0" />
+            <JFXComboBox fx:id="cmbTenCongTy" layoutX="126.0" layoutY="181.0" prefHeight="25.0" prefWidth="222.0" />
+            <Label layoutX="20.0" layoutY="238.0" text="Địa điểm:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnMoi" layoutX="60.0" layoutY="410.0" onAction="#btnMoiClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Mới" />
+            <JFXButton fx:id="btnLuu" layoutX="148.0" layoutY="410.0" onAction="#btlLuuClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Sửa" />
+            <JFXButton fx:id="btnXoa" layoutX="235.0" layoutY="410.0" onAction="#btnXoaClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Xóa" />
+            <JFXComboBox fx:id="cmbTenDiaDiem" layoutX="126.0" layoutY="234.0" prefHeight="25.0" prefWidth="222.0" />
+            <Label fx:id="lbKetQua" alignment="CENTER" layoutX="114.0" layoutY="359.0" prefHeight="17.0" prefWidth="154.0" textFill="#e10202" />
+            <JFXButton fx:id="btnChiTiet" layoutX="60.0" layoutY="461.0" onAction="#btnChiTietClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Chi tiết" />
+            <JFXButton fx:id="btnChiPhi" layoutX="148.0" layoutY="461.0" onAction="#btnChiPhiClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Chi phí" />
+            <JFXButton fx:id="btnThem" layoutX="60.0" layoutY="410.0" onAction="#btnThemClick" prefHeight="34.0" prefWidth="66.0" styleClass="btnNomal" stylesheets="@application.css" text="Thêm" />
+            <JFXButton fx:id="btnThamGiia" layoutX="237.0" layoutY="461.0" onAction="#btnThamGiaClick" prefHeight="34.0" prefWidth="80.0" styleClass="btnNomal" text="Tham gia" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" prefHeight="60.0" prefWidth="1033.0" text="QUẢN LÝ CHUYẾN ĐI" textFill="#3a148f">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Pane layoutX="554.0" layoutY="96.0" prefHeight="50.0" prefWidth="401.0">
+         <children>
+            <Label layoutX="13.0" layoutY="26.0" text="Ngày khởi hành:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnTim" layoutX="270.0" layoutY="18.0" onAction="#btnTimClick" prefHeight="34.0" prefWidth="53.0" styleClass="btnNomal" stylesheets="@application.css" text="Tìm" />
+            <JFXDatePicker fx:id="dpTimNgayKhoiHanh" layoutX="120.0" layoutY="19.0" prefHeight="25.0" prefWidth="146.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="tbChuyenDi" layoutX="382.0" layoutY="163.0" onMouseClicked="#tableChuyenDiClick" prefHeight="481.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="163.0">
+         <columns>
+            <TableColumn fx:id="colMaChuyenDi" prefWidth="127.0" text="Mã chuyến đi" />
+            <TableColumn fx:id="colTenCongTy" prefWidth="178.0" text="Công ty du lịch" />
+            <TableColumn fx:id="colTenDiaDiem" prefWidth="143.0" text="Địa điểm" />
+            <TableColumn fx:id="colNgayKhoiHanh" prefWidth="200.0" text="Ngày khởi hành" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

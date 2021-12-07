@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyendichoi.ThongKeController">
+   <children>
+      <Label alignment="CENTER" prefHeight="104.0" prefWidth="851.0" text="Thống kê việc dã ngoại" textFill="#8410a4" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="167.0" text="Địa điểm ít người đi nhất:" />
+      <Label layoutX="62.0" layoutY="212.0" text="Địa điểm nhiều  người đi nhất:" />
+      <Label layoutX="62.0" layoutY="257.0" text="Tổng chi phí trong năm:" />
+      <Label layoutX="62.0" layoutY="114.0" text="Chọn năm học:" />
+      <ComboBox layoutX="180.0" layoutY="110.0" prefWidth="150.0" />
+      <Button layoutX="344.0" layoutY="110.0" mnemonicParsing="false" text="Chọn" />
+      <Label layoutX="62.0" layoutY="303.0" text="Trung bình số lượng người đi mỗi chuyến:" />
+      <Label layoutX="223.0" layoutY="167.0" text="Mỹ" />
+      <Label layoutX="237.0" layoutY="212.0" text="Tp.HCM" />
+      <Label layoutX="209.0" layoutY="257.0" text="100000000" />
+      <Label layoutX="302.0" layoutY="303.0" text="999" />
+      <Label layoutX="302.0" layoutY="167.0" text="0 " />
+      <Label layoutX="330.0" layoutY="167.0" text="người" />
+      <Label layoutX="280.0" layoutY="257.0" text="đồng" />
+      <Label layoutX="330.0" layoutY="303.0" text="người" />
+   </children>
+</AnchorPane>

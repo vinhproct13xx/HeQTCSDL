@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlychuyendichoi.ThamGiaController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="78.0" prefWidth="851.0" text="Quản lý tham gia" textFill="#8207b2" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+<<<<<<< HEAD
+      <Label layoutY="78.0" prefHeight="78.0" prefWidth="851.0" text="  Chuyến đi...." textFill="#12e40b">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="14.0" layoutY="159.0" prefHeight="352.0" prefWidth="487.0">
+         <content>
+            <TableView prefHeight="350.0" prefWidth="486.0">
+              <columns>
+                  <TableColumn prefWidth="75.0" text="Mã học sinh" />
+                <TableColumn prefWidth="106.0" text="Tên học sinh" />
+                <TableColumn prefWidth="82.0" text="Lớp" />
+                  <TableColumn prefWidth="75.0" text="Tham gia" />
+                  <TableColumn prefWidth="75.0" text="Đóng tiền" />
+=======
+      <ScrollPane layoutX="14.0" layoutY="159.0" prefHeight="352.0" prefWidth="487.0">
+         <content>
+            <TableView fx:id="tbHocSinh" prefHeight="350.0" prefWidth="486.0">
+              <columns>
+                  <TableColumn fx:id="colMaHS" prefWidth="75.0" text="Mã học sinh" />
+                <TableColumn fx:id="colTenHS" prefWidth="214.0" text="Tên học sinh" />
+                  <TableColumn fx:id="colHSThamGia" prefWidth="84.0" text="Tham gia" />
+                  <TableColumn fx:id="colDaThuPhi" prefWidth="112.0" text="Đóng tiền" />
+>>>>>>> parent of 5b85053... tham gia
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+<<<<<<< HEAD
+      <ScrollPane layoutX="561.0" layoutY="159.0" prefHeight="352.0" prefWidth="289.0">
+         <content>
+            <TableView prefHeight="338.0" prefWidth="288.0">
+              <columns>
+                <TableColumn prefWidth="97.0" text="Mã giáo viên" />
+                <TableColumn prefWidth="177.0" text="Tên giáo viên" />
+=======
+      <ScrollPane layoutX="522.0" layoutY="159.0" prefHeight="352.0" prefWidth="323.0">
+         <content>
+            <TableView fx:id="tbGiaoVien" prefHeight="338.0" prefWidth="322.0">
+              <columns>
+                <TableColumn fx:id="colMaGV" prefWidth="81.0" text="Mã giáo viên" />
+                <TableColumn fx:id="colTaGV" prefWidth="143.0" text="Tên giáo viên" />
+                  <TableColumn fx:id="colGVThamGia" prefWidth="91.0" text="Tham gia" />
+>>>>>>> parent of 5b85053... tham gia
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+<<<<<<< HEAD
+      <Button layoutX="602.0" layoutY="537.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Lưu" />
+      <Button layoutX="706.0" layoutY="537.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Hủy" />
+=======
+      <JFXComboBox fx:id="cmbLop" layoutX="121.0" layoutY="96.0" onAction="#ComboboxSelectValue" prefHeight="25.0" prefWidth="126.0" />
+      <Label layoutX="37.0" layoutY="100.0" text="Lớp" />
+      <JFXButton fx:id="btnLuu" layoutX="660.0" layoutY="532.0" onAction="#btnLuuClick" prefHeight="35.0" prefWidth="77.0" styleClass="btnNomal" text="Lưu" />
+>>>>>>> parent of 5b85053... tham gia
+   </children>
+</AnchorPane>

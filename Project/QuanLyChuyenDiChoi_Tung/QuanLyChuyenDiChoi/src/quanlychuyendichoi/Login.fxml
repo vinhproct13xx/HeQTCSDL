@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="769.0" prefWidth="1366.0" styleClass="login" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <AnchorPane layoutX="683.0" layoutY="195.0" prefHeight="522.0" prefWidth="367.0" style="-fx-background-color: #FEF4E8;">
+         <children>
+            <JFXPasswordField fx:id="tfPassword" layoutX="116.0" layoutY="190.0" prefHeight="25.0" prefWidth="190.0" text="1" />
+            <JFXButton fx:id="btnLogin" layoutX="81.0" layoutY="261.0" onAction="#btnLoginClick" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #095283;" text="Đăng nhập" />
+            <Label layoutX="71.0" layoutY="28.0" prefHeight="77.0" prefWidth="225.0" style="-fx-alignment: center;" text="Đăng nhập" textAlignment="CENTER">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="105.0" prefHeight="44.0" prefWidth="79.0" text="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="190.0" text="Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfUsername" layoutX="116.0" layoutY="115.0" prefHeight="25.0" prefWidth="190.0" text="16521409@gm.uit.edu.vn" />
+            <Label layoutX="59.0" layoutY="333.0" prefHeight="44.0" prefWidth="249.0" textFill="#e42626" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

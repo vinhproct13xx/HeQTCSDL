@@ -1,0 +1,158 @@
+CREATE DATABASE QuanLyDaNgoai
+DROP DATABASE QuanLyDaNgoai
+USE QuanLyDaNgoai
+SET DATEFORMAT DMY
+
+
+CREATE TABLE HocSinh
+(
+	MaHS INT PRIMARY KEY,
+	TenHS NVARCHAR(50),
+	NgaySinh SMALLDATETIME,
+	DiaChi NVARCHAR(50),
+	TenCha NVARCHAR(50),
+	TenMe NVARCHAR(50),
+	TenNguoiGiamHo NVARCHAR(50),
+	SDT NVARCHAR(11),
+	TrangThai bit
+)
+CREATE TABLE NamHoc(
+	MaNH INT PRIMARY KEY,
+	TenNH NVARCHAR(20)
+)
+CREATE TABLE LopHoc
+(
+	MaLop NVARCHAR(6) PRIMARY KEY,
+	TenLop NVARCHAR(20)
+)
+
+
+CREATE TABLE CTLop
+(
+	MaHS INT FOREIGN KEY REFERENCES dbo.HocSinh(MaHS),
+	MaLop NVARCHAR(6) FOREIGN KEY REFERENCES dbo.LopHoc(MaLop), 
+	MaNH INT FOREIGN KEY REFERENCES dbo.NamHoc(MaNH),
+	CONSTRAINT pk_CTLop PRIMARY KEY(MaHS,MaLop, MaNH)
+)
+
+CREATE TABLE GiaoVien(
+	MaGV INT PRIMARY KEY,
+	TenGV NVARCHAR(50),
+	NgaySinh SMALLDATETIME,
+	DiaChi NVARCHAR(50),
+	SDT NVARCHAR(11),
+	CMND NVARCHAR(12),
+	MaLop NVARCHAR(6) FOREIGN KEY REFERENCES dbo.LopHoc(MaLop)
+)
+
+
+CREATE TABLE CongTyDuLich(
+	MaCongTy NVARCHAR(6) PRIMARY KEY,
+	TenCongTy NVARCHAR(50) NOT NULL,
+	DiaChi NVARCHAR(255),
+	SDT NVARCHAR(11)
+)
+
+
+CREATE TABLE DiaDiem
+(
+-- dia diem 
+	MaDiaDiem NVARCHAR(6) PRIMARY KEY,
+	TenDiaDiem NVARCHAR(50),
+	DiaChi NVARCHAR(255),
+)
+
+
+CREATE TABLE ChuyenDi
+(
+	MaChuyenDi  NVARCHAR(6) PRIMARY KEY,
+	MaCongTyDuLich NVARCHAR(6) FOREIGN KEY REFERENCES dbo.CongTyDuLich(MaCongTy),
+	MaDiaDiem NVARCHAR(6) FOREIGN KEY REFERENCES dbo.DiaDiem(MaDiaDiem),
+	NgayKhoiHanh date
+)
+
+CREATE TABLE ChiTietChuyenDi(
+	MaChuyenDi NVARCHAR(6) FOREIGN KEY REFERENCES dbo.ChuyenDi(MaChuyenDi),
+	ThoiGian time(5),
+	HoatDong NTEXT,
+	GhiChu NTEXT
+)
+
+
+CREATE TABLE ChiPhi
+(
+	MaChuyenDi NVARCHAR(6) FOREIGN KEY REFERENCES dbo.ChuyenDi(MaChuyenDi),
+	VeCong FLOAT,
+	TienXe FLOAT,
+	TienAnTrua FLOAT,
+	PhiHuongDanVien FLOAT,
+	NuocUong FLOAT,
+	TienAnXe FLOAT,
+	LinhTinh float,
+	GhiChu NTEXT,
+	Tong float,
+	CONSTRAINT pk_ChiPhi PRIMARY KEY (MaChuyenDi)
+)
+
+
+CREATE TABLE HopDong
+(
+	MaHopDong NVARCHAR(6) PRIMARY KEY,
+	MaChuyenDi NVARCHAR(6) FOREIGN KEY REFERENCES dbo.ChuyenDi(MaChuyenDi),
+	MaCongTy NVARCHAR(6) FOREIGN KEY REFERENCES dbo.CongTyDuLich(MaCongTy),
+	TriGia FLOAT,
+	TrangThai NVARCHAR(20)
+)
+CREATE TABLE ThongTinThanhToan -- chi tiet hop dong
+(
+	MaHopDong NVARCHAR(6) FOREIGN KEY REFERENCES dbo.HopDong(MaHopDong),
+	LanThanhToan INT,
+	NgayThanhToan DATE,
+	SoTien float,
+	CONSTRAINT pk_ThongTinThanhToan PRIMARY KEY (MaHopDong,LanThanhToan)
+)
+
+CREATE TABLE HocSinhThamGia
+(
+	MaHS INT FOREIGN KEY REFERENCES dbo.HocSinh(MaHS),
+	MaLop NVARCHAR(6) FOREIGN KEY REFERENCES dbo.LopHoc(MaLop),
+	MaChuyenDi nvarchar(6) FOREIGN KEY REFERENCES dbo.ChuyenDi(MaChuyenDi),
+	ThamGia BIT,
+	IsDongTien BIT,
+	CONSTRAINT pk_HocSinhThamGia PRIMARY KEY (MaHS, MaLop, MaChuyenDi)
+)
+
+
+CREATE TABLE GiaoVienThamGia
+(
+	MaGiaoVien INT FOREIGN KEY REFERENCES dbo.GiaoVien(MaGV),
+	MaLop NVARCHAR(6) FOREIGN KEY REFERENCES dbo.LopHoc(MaLop),
+	MaChuyenDi nvarchar(6) FOREIGN KEY REFERENCES dbo.ChuyenDi(MaChuyenDi),
+	ThamGia BIT,
+	CONSTRAINT pk_GiaoVienThamGia PRIMARY KEY (MaGiaoVien, MaLop, MaChuyenDi)
+)
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[User](
+	[ID] [int] NOT NULL,
+	[Email] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[Level] [int] NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE CT_GV_Lop
+(
+		 MaGV INT FOREIGN KEY REFERENCES dbo.GiaoVien(MaGV),
+		 MaLop NVARCHAR(6) FOREIGN KEY REFERENCES dbo.LopHoc(MaLop),
+		 MaNH INT FOREIGN KEY REFERENCES dbo.NamHoc(MaNH),
+		 CONSTRAINT pk PRIMARY KEY (MaGV, MaLop, MaNH)
+)
